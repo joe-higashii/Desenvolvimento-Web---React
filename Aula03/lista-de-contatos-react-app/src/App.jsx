@@ -4,7 +4,6 @@ import Contato from './components/Contato'
 
 function App() {
   const [listaDeContatos, setListaDeContatos] = useState([])
-
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
   const [temWhatsapp, setWhatsApp] = useState(false)
@@ -36,10 +35,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setListaDeContatos([...listaDeContatos, { nome, telefone, temWhatsapp, observacoes }])
-
+    handleLimparFormulario()
   }
 
-  const handleExcluir = () => {
+  const handleExcluir = (telefone) => {
     setListaDeContatos(listaDeContatos.filter((contato) => contato.telefone !== telefone))
 
   }
@@ -63,7 +62,7 @@ function App() {
       <Input value={telefone} onChange={handleTelefone} />
 
       <Text>Tem WhatsApp</Text>
-      <Checkbox  onChange={handleChangeTemWhatsapp} />
+      <Checkbox onChange={handleChangeTemWhatsapp} />
 
       <Text>Observações</Text>
       <Input value={observacoes} onChange={handleObservacoes} marginBottom={'20px'}/>
