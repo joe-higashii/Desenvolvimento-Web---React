@@ -1,7 +1,10 @@
 {
-  "posts": [],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
+  "posts": [
+    {
+      "autor": "asdasd",
+      "comentario": "asdasd",
+      "likes": 0,
+      "id": 1
+    }
+  ]
 }

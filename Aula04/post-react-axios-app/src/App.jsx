@@ -12,6 +12,10 @@ function App() {
     getPosts();
   }, [listaPosts]);
 
+  const handleLike = () => {
+    
+  }
+
   const getPosts = async () => {
     const response = await api.get("/posts");
     setListaPosts(response.data);
